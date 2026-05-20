@@ -16,6 +16,8 @@ in
   home.username = "isaac";
   home.homeDirectory = "/home/isaac";
 
+  fonts.fontconfig.enable = true;
+
   programs.bash.enable = true;
 
   programs.home-manager.enable = true;
@@ -91,9 +93,19 @@ in
     };
   };
 
+  programs.kitty = {
+    enable = true;
+    font = {
+      name = "FIraCode Nerd Font";
+      size = 11;
+    };
+  };
+
   home.packages = with pkgs; [
     libnotify
     kitty
+    nerd-fonts.fira-code
+    nerd-fonts.jetbrains-mono
   ];
 
   imports = [

@@ -17,6 +17,8 @@
   networking.hostName = "nixos"; # Define your hostname.
   #networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
+  hardware.graphics.enable = true;
+
   # Enable networking
   networking.networkmanager.enable = true;
 
@@ -24,6 +26,13 @@
   hardware.bluetooth = {
     enable = true;
     powerOnBoot = true;
+
+    settings = {
+      General = {
+        ControllerMode = "dual";
+        Experimental = true;
+      };
+    };
   };
 
   services.blueman.enable = true;
