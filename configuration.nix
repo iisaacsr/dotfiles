@@ -100,6 +100,11 @@
     wget
   ];
 
+  environment.pathsToLink = [
+    "/share/applications"
+    "/share/xdg-desktop-portal"
+  ];
+
   fonts.packages = with pkgs; [
     noto-fonts-color-emoji
     twemoji-color-font
