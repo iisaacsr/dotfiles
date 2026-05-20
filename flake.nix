@@ -2,7 +2,7 @@
   description = "first flake";
 
   inputs = {
-    nixpkgs.url = "nixpkgs/nixos-25.11";
+    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     home-manager.url = "github:nix-community/home-manager/master";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
