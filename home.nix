@@ -99,6 +99,7 @@ in
   imports = [
     inputs.zen-browser.homeModules.twilight
     ./discord.nix
+    ./hyprland.nix
   ];
 
   programs.zen-browser = {
