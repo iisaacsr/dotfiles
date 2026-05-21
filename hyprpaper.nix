@@ -8,8 +8,11 @@
       preload = [
         "/home/isaac/Pictures/wallpaper.jpg"
       ];
-      wallppaper = [
-        "/home/isaac/Pictures/wallpaper.jpg"
+      wallpaper = [
+        {
+          monitor = "";
+          path = "/home/isaac/Pictures/wallpaper.jpg";
+        }
       ];
     };
   };
