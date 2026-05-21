@@ -17,8 +17,9 @@
       "$mod" = "SUPER";
       bind = [
         # basic
-        "$mod, Q, exec, kitty"
+        "$mod, Q, exec, ghostty"
         "$mod, R, exec, wofi --show drun"
+        "$mod, C, killactive"
         # arrow key move thru windows
         "$mod, left, movefocus, l"
         "$mod, right, movefocus, r"

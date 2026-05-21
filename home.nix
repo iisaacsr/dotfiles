@@ -71,7 +71,7 @@ in
   programs.helix = {
     enable = true;
     settings = {
-      theme = "autumn_night_transparent";
+      theme = "amberwood";
       editor.cursor-shape = {
         normal = "block";
         insert = "bar";
@@ -85,33 +85,20 @@ in
         formatter.command = lib.getExe pkgs.nixfmt-rfc-style;
       }
     ];
-    themes = {
-      autumn_night_transparent = {
-        "inherits" = "autumn_night";
-        "ui.background" = { };
-      };
-    };
-  };
-
-  programs.kitty = {
-    enable = true;
-    font = {
-      name = "FIraCode Nerd Font";
-      size = 11;
-    };
   };
 
   home.packages = with pkgs; [
     libnotify
-    kitty
     nerd-fonts.fira-code
     nerd-fonts.jetbrains-mono
+    spotify
   ];
 
   imports = [
     inputs.zen-browser.homeModules.twilight
     ./discord.nix
     ./hyprland.nix
+    ./ghostty.nix
   ];
 
   programs.zen-browser = {
