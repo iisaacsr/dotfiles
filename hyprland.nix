@@ -1,11 +1,15 @@
 { config, pkgs, ... }:
 
 {
+  imports = [ ./hyprpaper.nix ];
+
   wayland.windowManager.hyprland = {
     enable = true;
     configType = "hyprlang";
 
     settings = {
+      exec-once = [ "hyprpaper" ];
+
       dwindle = {
         preserve_split = true;
       };
