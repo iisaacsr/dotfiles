@@ -30,7 +30,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.isaac = import ./home.nix;
+            home-manager.users.isaac = import ./home/isaac.nix;
             home-manager.extraSpecialArgs = { inherit inputs; };
           }
         ];
