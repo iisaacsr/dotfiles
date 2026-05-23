@@ -3,7 +3,7 @@
   pkgs,
   inputs,
   ...
-}: # Added inputs here
+}:
 
 {
   imports = [
