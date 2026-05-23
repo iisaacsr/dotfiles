@@ -25,7 +25,7 @@
       bind = [
         # basic
         "$mod, Q, exec, ghostty"
-        "$mod, R, exec, wofi --show drun"
+        "$mod, R, exec, fuzzel"
         "$mod, C, killactive"
         # arrow key move thru windows
         "$mod, left, movefocus, l"

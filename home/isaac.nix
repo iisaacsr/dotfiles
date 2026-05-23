@@ -16,7 +16,7 @@
     ../modules/apps/discord.nix
     ../modules/apps/ghostty.nix
     ../modules/hyprland/hyprland.nix
-    ../modules/apps/waybar.nix
+    ../modules/apps/waybar/waybar.nix
   ];
 
   fonts.fontconfig.enable = true;
@@ -57,6 +57,8 @@
 
   programs.home-manager.enable = true;
 
+  programs.fuzzel.enable = true;
+
   programs.ssh = {
     enable = true;
     enableDefaultConfig = false;
@@ -64,8 +66,6 @@
       AddKeysToAgent = "yes";
     };
   };
-
-  programs.wofi.enable = true;
 
   programs.zen-browser = {
     enable = true;
