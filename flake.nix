@@ -24,7 +24,7 @@
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
         modules = [
-          ./hosts/laptop/configuration.nix
+          ./hosts/lenovo-tuf/configuration.nix
 
           home-manager.nixosModules.home-manager
           {
