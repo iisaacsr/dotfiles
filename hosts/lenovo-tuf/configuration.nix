@@ -22,6 +22,11 @@
   ];
 
   hardware.graphics.enable = true;
+  hardware.nvidia = {
+    powerManagement.enable = true;
+    modesetting.enable = true;
+    package = config.boot.kernelPackage.nvidiaPackages.stable;
+  };
   hardware.bluetooth = {
     enable = true;
     powerOnBoot = true;
