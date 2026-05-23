@@ -22,14 +22,6 @@ in
 
   programs.home-manager.enable = true;
 
-  ## waybar
-
-  programs.waybar.enable = true;
-
-  programs.waybar.settings.main = {
-    modules-right = [ "clock" ];
-  };
-
   programs.wofi.enable = true;
 
   services.ssh-agent.enable = true;
@@ -61,10 +53,10 @@ in
     enable = true;
     settings = {
       font = "sans-serif 10";
-      backgroundColor = "#1e1e2e";
-      textColor = "#cdd6f4";
-      borderColor = "#89b4fa";
-      borderRadius = 8;
+      background-color = "#1e1e2e";
+      text-color = "#cdd6f4";
+      border-color = "#89b4fa";
+      border-radius = 8;
     };
   };
 
@@ -99,6 +91,7 @@ in
     ./discord.nix
     ./hyprland.nix
     ./ghostty.nix
+    ./waybar.nix
   ];
 
   programs.zen-browser = {

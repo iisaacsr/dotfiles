@@ -102,6 +102,7 @@
     vim
     git
     wget
+    brightnessctl
   ];
 
   environment.pathsToLink = [

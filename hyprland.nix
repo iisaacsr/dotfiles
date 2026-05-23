@@ -8,7 +8,10 @@
     configType = "hyprlang";
 
     settings = {
-      exec-once = [ "hyprpaper" ];
+      exec-once = [
+        "hyprpaper"
+        "waybar"
+      ];
 
       dwindle = {
         preserve_split = true;
@@ -34,6 +37,7 @@
         "$mod SHIFT, 2, movetoworkspace, 2"
         "$mod SHIFT, 3, movetoworkspace, 3"
         "$mod SHIFT, 4, movetoworkspace, 4"
+        # misc
       ];
     };
   };
