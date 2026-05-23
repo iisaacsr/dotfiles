@@ -1,17 +1,14 @@
 {
-  description = "first flake";
+  description = "nixos flake of doom and despair";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager/master";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        home-manager.follows = "home-manager";
-      };
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
@@ -20,15 +17,14 @@
       self,
       nixpkgs,
       home-manager,
-      zen-browser,
       ...
     }@inputs:
     {
-      nixosConfigurations.isaac = nixpkgs.lib.nixosSystem {
+      nixosConfigurations.lenovo-tuf = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
         modules = [
-          ./configuration.nix
+          ./hosts/laptop/configuration.nix
 
           home-manager.nixosModules.home-manager
           {
@@ -36,7 +32,6 @@
             home-manager.useUserPackages = true;
             home-manager.users.isaac = import ./home.nix;
             home-manager.extraSpecialArgs = { inherit inputs; };
-            home-manager.backupFileExtension = "backup";
           }
         ];
       };
