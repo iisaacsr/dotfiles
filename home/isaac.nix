@@ -101,6 +101,7 @@
   home.packages = with pkgs; [
     brightnessctl
     libnotify
+    fastfetch
     nerd-fonts.fira-code
     nerd-fonts.jetbrains-mono
     spotify

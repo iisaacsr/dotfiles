@@ -82,7 +82,6 @@
         };
         "custom/sep" = {
           format = "|";
-          interval = 0;
         };
       };
     };
