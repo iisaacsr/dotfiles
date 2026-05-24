@@ -106,5 +106,5 @@ button:hover {
 
 
 #tray {
-    background-color: #2980b9;
+    background-color: @bg;
 }
