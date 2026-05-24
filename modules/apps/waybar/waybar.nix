@@ -16,6 +16,7 @@
           "custom/sep"
         ];
         modules-right = [
+          "battery"
           "custom/sep"
           "network"
           "custom/sep"
@@ -38,7 +39,7 @@
         };
         "hyprland/window" = {
           max-length = 40;
-          seperate-outputs = false;
+          separate-outputs = false;
         };
         "tray" = {
           spacing = 10;
@@ -46,8 +47,11 @@
         "clock" = {
           format-alt = "{:%Y-%m-%d}";
         };
+        "cpu" = {
+          format = "CPU: {usage}%";
+        };
         "memory" = {
-          format = "Mem: {used}G";
+          format = "RAM: {used}G";
         };
         "disk" = {
           interval = 60;
@@ -59,9 +63,9 @@
             "warning" = 30;
             "critical" = 15;
           };
-          format = "Bat: {capacity}% {icon} {time}";
+          format = "{capacity}% {icon} {time}";
           format-plugged = "{capacity}% ";
-          format-alt = "Bat {capacity}%";
+          format-alt = "{capacity}%";
           format-time = "{H}:{M}";
           format-icons = [
             ""
@@ -72,8 +76,9 @@
           ];
         };
         "network" = {
-          format = "Online";
-          format-disconnected = "Disconnected ⚠";
+          format-wifi = " ";
+          format-ethernet = " ";
+          format-disconnected = "⚠";
         };
         "custom/sep" = {
           format = "|";

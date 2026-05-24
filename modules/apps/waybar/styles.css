@@ -71,7 +71,6 @@ button:hover {
 
 #battery {
     color: @ylw;
-    border-bottom: 4px solid @ylw;
 }
 
 #disk {
@@ -91,12 +90,20 @@ button:hover {
 
 #network {
     color: @white;
-    border-bottom: 4px solid @white;
 }
 
 #network.disconnected {
     background-color: @red;
 }
+
+#tooltip {
+    background: @bg;
+    color: @white;
+    border: 1px solid @brblk; 
+    border-radius: 4px;      
+    padding: 5px;            
+}
+
 
 #tray {
     background-color: #2980b9;
