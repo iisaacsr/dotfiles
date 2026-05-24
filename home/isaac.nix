@@ -99,6 +99,7 @@
   services.ssh-agent.enable = true;
 
   home.packages = with pkgs; [
+    inputs.hyprcap.packages.${pkgs.system}.default
     brightnessctl
     libnotify
     fastfetch

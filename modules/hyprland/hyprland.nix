@@ -18,7 +18,8 @@
       };
 
       monitor = [
-        ",preferred,auto,1"
+        "eDP-1, 1920x1080@144, 0x0, 1"
+        "HDMI-A-1, 1920x1080@144, 1920x0, 1"
       ];
 
       "$mod" = "SUPER";
@@ -44,6 +45,8 @@
         "$mod SHIFT, 2, movetoworkspace, 2"
         "$mod SHIFT, 3, movetoworkspace, 3"
         "$mod SHIFT, 4, movetoworkspace, 4"
+        # misc
+        "$mod SHIFT, S, exec, hyprcap shot"
       ];
       # volume knob
       bindle = [
