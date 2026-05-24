@@ -22,7 +22,19 @@
 
   fonts.fontconfig.enable = true;
 
-  programs.bash.enable = true;
+  programs.bash = {
+    enable = true;
+    shellAliases = {
+      # ls
+      "ls" = "eza";
+      "ll" = "eza -lbF";
+      "la" = "eza -lbhHigUmuSa";
+      "lt" = "eza --tree";
+      # misc
+      ".." = "cd..";
+      "tuf-rebuild" = "sudo nixos-rebuild switch --flake .#lenovo-tuf";
+    };
+  };
 
   programs.git = {
     enable = true;
