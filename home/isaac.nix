@@ -14,7 +14,8 @@
   imports = [
     inputs.zen-browser.homeModules.twilight
     ../modules/apps/discord.nix
-    ../modules/apps/ghostty.nix
+    ../modules/apps/shell/ghostty.nix
+    ../modules/apps/shell/eza.nix
     ../modules/hyprland/hyprland.nix
     ../modules/apps/waybar/waybar.nix
   ];
