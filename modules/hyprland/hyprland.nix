@@ -8,9 +8,16 @@
     configType = "hyprlang";
 
     settings = {
+
+      env = [
+        "XCURSOR_SIZE, 24"
+        "HYPRCURSOR_SIZE, 24"
+      ];
+
       exec-once = [
         "hyprpaper"
         "waybar"
+        "hyprctl setcursor Bibata-Modern-Classic 24"
       ];
 
       dwindle = {
