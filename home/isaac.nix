@@ -51,6 +51,11 @@
       user.name = "iisaacsr";
       user.email = "isaacsroy3@gmail.com";
       init.defaultBranch = "main";
+      credential = {
+        "https://github.com" = {
+          helper = "store";
+        };
+      };
     };
   };
 
