@@ -16,6 +16,8 @@
           "custom/sep"
         ];
         modules-right = [
+          "custom/budget"
+          "custom/sep"
           "battery"
           "custom/sep"
           "network"
@@ -74,6 +76,12 @@
             ""
             ""
           ];
+        };
+        "custom/budget" = {
+          exec = "/home/isaac/Documents/budget-app/waybar-budget.sh";
+          on-click = "/home/isaac/Documents/budget-app/start.sh";
+          interval = 60;
+          return-type = "json";
         };
         "network" = {
           format-wifi = " ";

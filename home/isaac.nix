@@ -18,6 +18,7 @@
     ../modules/apps/shell/eza.nix
     ../modules/hyprland/hyprland.nix
     ../modules/apps/waybar/waybar.nix
+    ../modules/apps/opencode.nix
   ];
 
   fonts.fontconfig.enable = true;
@@ -53,6 +54,8 @@
       init.defaultBranch = "main";
     };
   };
+
+  programs.jq.enable = true;
 
   programs.helix = {
     enable = true;
