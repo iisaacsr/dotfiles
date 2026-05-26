@@ -65,7 +65,7 @@
     vim
     git
     wget
-    inputs.zen-browser.packages."${system}".default
+    inputs.helium.packages.${system}.default
   ];
 
   system.stateVersion = "25.11";

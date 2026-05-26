@@ -78,8 +78,8 @@
           ];
         };
         "custom/budget" = {
-          exec = "/home/isaac/Documents/budget-app/waybar-budget.sh";
-          on-click = "/home/isaac/Documents/budget-app/start.sh";
+          exec = "/home/isaac/Documents/budget-app/scripts/waybar-budget.sh";
+          on-click = "/home/isaac/Documents/budget-app/scripts/start.sh";
           interval = 60;
           return-type = "json";
         };

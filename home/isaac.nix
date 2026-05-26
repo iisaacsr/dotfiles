@@ -12,7 +12,6 @@
   home.stateVersion = "25.11";
 
   imports = [
-    inputs.zen-browser.homeModules.twilight
     ../modules/apps/discord.nix
     ../modules/apps/shell/ghostty.nix
     ../modules/apps/shell/eza.nix
@@ -92,11 +91,6 @@
     settings."*" = {
       AddKeysToAgent = "yes";
     };
-  };
-
-  programs.zen-browser = {
-    enable = true;
-    setAsDefaultBrowser = true;
   };
 
   services.mako = {
