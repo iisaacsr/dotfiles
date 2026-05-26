@@ -50,7 +50,6 @@
     settings = {
       user.name = "iisaacsr";
       user.email = "isaacsroy3@gmail.com";
-      credential.helper = "libsecret";
       init.defaultBranch = "main";
     };
   };
