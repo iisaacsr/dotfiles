@@ -1,10 +1,9 @@
-{ config, pkgs, ... } :
+{ config, pkgs, ... }:
 {
-  programs.obsidian
+  programs.obsidian = {
     enable = true;
     cli = {
       enable = true;
-    }
-  }
-  
+    };
+  };
 }
