@@ -18,6 +18,7 @@
     ../modules/hyprland/hyprland.nix
     ../modules/apps/waybar/waybar.nix
     ../modules/apps/opencode.nix
+    ../modules/apps/obsidian.nix
   ];
 
   fonts.fontconfig.enable = true;
@@ -38,7 +39,7 @@
       "la" = "eza -lbhHigUmuSa";
       "lt" = "eza --tree";
       # misc
-      ".." = "cd..";
+      ".." = "cd ..";
       "tuf-rebuild" = "sudo nixos-rebuild switch --flake .#lenovo-tuf";
     };
   };
