@@ -1,4 +1,9 @@
-{ config, pkgs, lib, ... }
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 {
   services.factorio = {
     enable = true;
@@ -12,6 +17,6 @@
     NoNewPrivileges = true;
     PrivateDevices = true;
     PrivateTmp = true;
-    ReadWritePaths = ["/var/lib/factorio"];
+    ReadWritePaths = [ "/var/lib/factorio" ];
   };
 }
