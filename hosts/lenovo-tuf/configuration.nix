@@ -8,6 +8,7 @@
 {
   imports = [
     ./hardware-configuration.nix
+    ../../modules/apps/factorio.nix
   ];
 
   boot.loader.systemd-boot.enable = true;
@@ -65,6 +66,7 @@
     vim
     git
     wget
+    bitwarden-desktop
     inputs.helium.packages.${system}.default
   ];
 
