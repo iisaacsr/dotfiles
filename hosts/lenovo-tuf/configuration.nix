@@ -66,7 +66,7 @@
     git
     wget
     bitwarden-desktop
-    inputs.helium.packages.${system}.default
+    inputs.helium.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 
   system.stateVersion = "25.11";
