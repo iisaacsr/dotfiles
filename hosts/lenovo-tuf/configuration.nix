@@ -62,9 +62,10 @@
   ];
 
   environment.systemPackages = with pkgs; [
-    vim
     git
+    curl
     wget
+    vim
     bitwarden-desktop
     inputs.helium.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
