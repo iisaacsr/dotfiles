@@ -32,7 +32,6 @@
     enable = true;
     powerOnBoot = true;
   };
-  services.blueman.enable = true;
 
   time.timeZone = "America/New_York";
   i18n.defaultLocale = "en_US.UTF-8";
