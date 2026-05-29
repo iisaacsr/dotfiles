@@ -19,6 +19,8 @@
     ../modules/apps/waybar/waybar.nix
     ../modules/apps/opencode.nix
     ../modules/apps/obsidian.nix
+    ../modules/apps/helix.nix
+    ../modules/apps/yazi.nix
   ];
 
   fonts.fontconfig.enable = true;
@@ -60,27 +62,6 @@
   };
 
   programs.jq.enable = true;
-
-  programs.helix = {
-    enable = true;
-    settings = {
-      theme = "amberwood";
-      editor = {
-        cursor-shape = {
-          normal = "block";
-          insert = "bar";
-          select = "underline";
-        };
-      };
-    };
-    languages.language = [
-      {
-        name = "nix";
-        auto-format = true;
-        formatter.command = lib.getExe pkgs.nixfmt-rfc-style;
-      }
-    ];
-  };
 
   programs.home-manager.enable = true;
 
