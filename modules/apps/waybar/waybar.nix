@@ -16,6 +16,8 @@
           "custom/sep"
         ];
         modules-right = [
+          "tray"
+          "custom/sep"
           "custom/budget"
           "custom/sep"
           "battery"
@@ -29,8 +31,6 @@
           "disk"
           "custom/sep"
           "clock"
-          "custom/sep"
-          "tray"
         ];
         "hyprland/workspaces" = {
           disable-scroll = true;
