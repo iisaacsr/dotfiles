@@ -21,7 +21,7 @@
       {
         name = "nix";
         auto-format = true;
-        formatter.command = lib.getExe pkgs.nixfmt-rfc;
+        formatter.command = lib.getExe pkgs.nixfmt;
       }
       {
         name = "c-sharp";

@@ -32,8 +32,17 @@
     size = 24;
   };
 
-  programs.bash = {
+  xdg.portal = {
     enable = true;
+    config.common.default = "*";
+
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-gtk
+      xdg-desktop-portal-hyprland
+    ];
+  };
+
+  programs.fish = {
     shellAliases = {
       # ls
       "ls" = "eza";
