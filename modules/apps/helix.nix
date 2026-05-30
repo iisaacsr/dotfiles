@@ -5,7 +5,7 @@
 {
   home.packages = [
     pkgs.csharp-ls
-    pkgs.nixd
+    pkgs.omnisharp-roslyn
   ];
 
   programs.helix = {
@@ -24,10 +24,10 @@
     languages = {
 
       # lsps
-      csharp-ls = {
-        command = "csharp-ls";
+      omnisharp = {
+        command = "omnisharp";
       };
-      nil = {
+      nixd = {
         command = "nixd";
       };
 
@@ -36,7 +36,7 @@
         {
           name = "c-sharp";
           auto-format = true;
-          language-servers = [ "csharp-ls" ];
+          language-servers = [ "omnisharp" ];
         }
         {
           name = "nix";
