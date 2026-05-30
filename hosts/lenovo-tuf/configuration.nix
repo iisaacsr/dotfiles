@@ -22,6 +22,8 @@
     "flakes"
   ];
 
+  programs.fish.enable = true;
+
   hardware.graphics.enable = true;
   hardware.nvidia = {
     powerManagement.enable = true;
@@ -50,6 +52,7 @@
   users.users.isaac = {
     isNormalUser = true;
     description = "isaac";
+    shell = pkgs.fish;
     extraGroups = [
       "networkmanager"
       "wheel"
@@ -64,7 +67,6 @@
   ];
 
   environment.systemPackages = with pkgs; [
-    fish
     git
     curl
     wget
