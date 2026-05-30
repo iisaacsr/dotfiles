@@ -13,8 +13,7 @@
 
   imports = [
     ../modules/apps/discord.nix
-    ../modules/apps/shell/ghostty.nix
-    ../modules/apps/shell/eza.nix
+    ../modules/apps/shell.nix
     ../modules/hyprland/hyprland.nix
     ../modules/apps/waybar/waybar.nix
     ../modules/apps/opencode.nix
