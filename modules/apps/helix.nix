@@ -5,6 +5,11 @@
   ...
 }:
 {
+  home.packages = [
+    pkgs.csharp-ls
+    pkgs.nixd
+  ];
+
   programs.helix = {
     enable = true;
     settings = {
@@ -17,17 +22,30 @@
         };
       };
     };
-    languages.language = [
-      {
-        name = "nix";
-        auto-format = true;
-        formatter.command = lib.getExe pkgs.nixfmt;
-      }
-      {
-        name = "c-sharp";
-        auto-format = true;
-        language-servers = [ "csharp-ls" ];
-      }
-    ];
+
+    languages = {
+
+      # lsps
+      csharp-ls = {
+        command = "csharp-ls";
+      };
+      nil = {
+        command = "nixd";
+      };
+
+      # langs
+      language = [
+        {
+          name = "c-sharp";
+          auto-format = true;
+          language-servers = [ "csharp-ls" ];
+        }
+        {
+          name = "nix";
+          auto-format = true;
+          language-servers = [ "nixd" ];
+        }
+      ];
+    };
   };
 }
