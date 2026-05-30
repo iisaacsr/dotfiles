@@ -19,11 +19,8 @@
 
   outputs =
     {
-      self,
       nixpkgs,
       home-manager,
-      helium,
-      hyprcap,
       ...
     }@inputs:
     {
