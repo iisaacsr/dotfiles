@@ -17,6 +17,7 @@
       # misc
       ".." = "cd ..";
       "tuf-rebuild" = "sudo nixos-rebuild switch --flake .#lenovo-tuf";
+      "desktop-rebuild" = "sudo nixos-rebuild switch --flake .#desktop";
     };
   };
 
