@@ -8,6 +8,11 @@
     configType = "hyprlang";
 
     settings = {
+    
+      cursor = {
+        no_hardware_cursors = true;
+        inactive_timeout = 0;
+      };
 
       env = [
         "XCURSOR_SIZE, 24"
