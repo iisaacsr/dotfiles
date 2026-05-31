@@ -32,7 +32,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.isaac = import ./home/isaac.nix;
+            home-manager.users.isaac = import ./home/lenovo-tuf/isaac.nix;
             home-manager.backupFileExtension = "backup";
             home-manager.extraSpecialArgs = { inherit inputs; };
           }
@@ -47,7 +47,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.isaac = import ./home/isaac.nix;
+            home-manager.users.isaac = import ./home/desktop/isaac.nix;
             home-manager.backupFileExtension = "backup";
             home-manager.extraSpecialArgs = { inherit inputs; };
           }

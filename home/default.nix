@@ -5,16 +5,12 @@
 }:
 
 {
-  home.username = "isaac";
-  home.homeDirectory = "/home/isaac";
-  home.stateVersion = "25.11";
 
   imports = [
     ../modules/apps/discord.nix
     ../modules/apps/shell.nix
     ../modules/hyprland/hyprland.nix
     ../modules/apps/waybar/waybar.nix
-    ../modules/apps/opencode.nix
     ../modules/apps/obsidian.nix
     ../modules/apps/helix.nix
     ../modules/apps/yazi.nix
@@ -83,7 +79,6 @@
 
   home.packages = with pkgs; [
     inputs.hyprcap.packages.${pkgs.stdenv.hostPlatform.system}.default
-    brightnessctl
     libnotify
     fastfetch
     nerd-fonts.fira-code
