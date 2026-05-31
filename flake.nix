@@ -39,5 +39,20 @@
         ];
         specialArgs = { inherit inputs; };
       };
+      nixosConfigurations.desktop = nixpkgs.lib.nixosSystem {
+        modules = [
+          ./hosts/desktop/configuration.nix
+          { nixpkgs.hostPlatform = "x86_64-linux"; }
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.isaac = import ./home/isaac.nix;
+            home-manager.backupFileExtension = "backup";
+            home-manager.extraSpecialArgs = { inherit inputs; };
+          }
+         ];
+         specialArgs = { inherit inputs; };
+      };
     };
 }

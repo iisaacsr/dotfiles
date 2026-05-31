@@ -4,7 +4,7 @@
 }:
 {
   home.packages = [
-    pkgs.csharp-ls
+    pkgs.nixd
     pkgs.omnisharp-roslyn
   ];
 
