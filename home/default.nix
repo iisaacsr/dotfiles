@@ -5,7 +5,6 @@
 }:
 
 {
-
   imports = [
     ../modules/apps/discord.nix
     ../modules/apps/shell.nix
@@ -14,9 +13,17 @@
     ../modules/apps/obsidian.nix
     ../modules/apps/helix.nix
     ../modules/apps/yazi.nix
+    ../modules/apps/mako.nix
   ];
 
-  fonts.fontconfig.enable = true;
+  fonts.fontconfig = {
+    enable = true;
+    defaultFonts = {
+      monospace = [ "JetBrains Mono Nerd Font" ];
+      sansSerif = [ "JetBrains Mono Nerd Font" ];
+      serif = [ "JetBrains Mono Font" ];
+    };
+  };
 
   home.pointerCursor = {
     gtk.enable = true;
@@ -64,25 +71,13 @@
     };
   };
 
-  services.mako = {
-    enable = true;
-    settings = {
-      font = "sans-serif 10";
-      background-color = "#1e1e2e";
-      text-color = "#cdd6f4";
-      border-color = "#89b4fa";
-      border-radius = 8;
-    };
-  };
-
   services.ssh-agent.enable = true;
 
   home.packages = with pkgs; [
     inputs.hyprcap.packages.${pkgs.stdenv.hostPlatform.system}.default
     libnotify
     fastfetch
-    nerd-fonts.fira-code
-    nerd-fonts.jetbrains-mono
+    nerd-fonts._0xproto
     spotify
   ];
 }
