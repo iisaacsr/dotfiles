@@ -11,7 +11,7 @@
     ../modules/hyprland/hyprland.nix
     ../modules/apps/waybar/waybar.nix
     ../modules/apps/obsidian.nix
-    ../modules/apps/helix.nix
+    ../modules/apps/helix/helix.nix
     ../modules/apps/yazi.nix
     ../modules/apps/mako.nix
   ];

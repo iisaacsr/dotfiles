@@ -1,4 +1,8 @@
 { ... }:
+let
+  highlight = "#e39a5e";
+  text  = "#ffffff";
+in
 {
   programs.fish = {
     enable = true;
@@ -26,9 +30,26 @@
     enableFishIntegration = true;
 
     settings = {
-      theme = "Black Metal (Bathory)";
       font-size = 11;
+
+      # mini theme (no nonsense)
       background-opacity = 0.75;
+      background = "000000";
+      foreground = "${text}";
+
+      palette = [
+      "1 = ${text}"
+      "2 = ${highlight}"
+      "3 = ${highlight}"
+      "4 = ${text}"
+      "5 = ${text}"
+      "6 = ${text}"
+      "9 = ${text}"
+      "11 = ${highlight}"
+      "12 = ${text}"
+      "13 = ${text}"
+      "14 = ${text}"
+      ];
     };
   };
 
