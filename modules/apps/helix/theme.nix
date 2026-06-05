@@ -54,9 +54,9 @@ in
     "variable" = "${text}";
     "variable.parameter" = "${text}";
     "variable.other.member" = "${text}";
-    "function" = "${text}";
-    "function.method" = "${text}";
-    "function.builtin" = "${text}";
+    "function" = "${highlight}";
+    "function.method" = "${highlight}";
+    "function.builtin" = "${highlight}";
     "keyword" = "${text}";
     "keyword.control" = "${text}";
     "keyword.directive" = "${text}";

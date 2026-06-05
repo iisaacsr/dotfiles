@@ -74,6 +74,7 @@
     wget
     vim
     bitwarden-desktop
+    thorium-reader
     inputs.helium.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 
