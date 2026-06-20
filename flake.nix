@@ -15,6 +15,10 @@
       url = "github:alonso-herreros/hyprcap";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    niri = {
+      url = "github:sodiboo/niri-flake/main";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -32,7 +36,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.isaac = import ./home/lenovo-tuf/isaac.nix;
+            home-manager.users.isaac = ./home/lenovo-tuf/isaac.nix;
             home-manager.backupFileExtension = "backup";
             home-manager.extraSpecialArgs = { inherit inputs; };
           }
@@ -47,7 +51,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.isaac = import ./home/desktop/isaac.nix;
+            home-manager.users.isaac = ./home/desktop/isaac.nix;
             home-manager.backupFileExtension = "backup";
             home-manager.extraSpecialArgs = { inherit inputs; };
           }

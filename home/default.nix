@@ -8,7 +8,8 @@
   imports = [
     ../modules/apps/discord.nix
     ../modules/apps/shell.nix
-    ../modules/hyprland/hyprland.nix
+    ../modules/wms/hyprland/hyprland.nix
+    ../modules/wms/niri/niri.nix
     ../modules/apps/waybar/waybar.nix
     ../modules/apps/obsidian.nix
     ../modules/apps/helix/helix.nix
