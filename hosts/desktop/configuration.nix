@@ -24,12 +24,20 @@
 
   programs.fish.enable = true;
 
-  hardware.graphics.enable = true;
-  hardware.nvidia = {
-    powerManagement.enable = true;
-    modesetting.enable = true;
-    package = config.boot.kernelPackage.nvidiaPackages.stable;
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;  
   };
+  
+  hardware.nvidia = {
+    powerManagement.enable = false;
+    modesetting.enable = true;
+    open = false;
+    package = config.boot.kernelPackages.nvidiaPackages.stable;
+  };
+
+  services.xserver.videoDrivers = [ "nvidia" ];
+  
   hardware.bluetooth = {
     enable = true;
     powerOnBoot = true;
