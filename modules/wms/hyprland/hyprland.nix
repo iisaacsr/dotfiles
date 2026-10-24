@@ -18,10 +18,20 @@ in
     configType = "lua";
 
     settings = {
-      # The Lua renderer maps each top-level setting to an hl.<name>(...) call.
-      # `config` therefore wraps the ordinary compositor options in hl.config.
       config = {
-        general.allow_tearing = true;
+        general = {
+          allow_tearing = true;
+          layout = "scrolling";
+        };
+
+        scrolling = {
+          column_width = 0.5;
+          fullscreen_on_one_column = false;
+          focus_fit_method = 1;
+          follow_focus = true;
+          wrap_focus = false;
+          explicit_column_widths = "0.333, 0.5, 0.667, 1.0";
+        };
 
         cursor = {
           no_hardware_cursors = true;
@@ -82,6 +92,16 @@ in
         }
       ];
 
+      animation = [
+        {
+          leaf = "workspaces";
+          enabled = true;
+          speed = 5;
+          bezier = "default";
+          style = "slidefade";
+        }
+      ];
+
       bind = [
         # Basic
         (bind ''mainMod .. " + Q"'' ''hl.dsp.exec_cmd("ghostty")'' null)
@@ -108,6 +128,14 @@ in
         (bind ''mainMod .. " + SHIFT + K"'' ''hl.dsp.window.move({ direction = "up" })'' null)
         (bind ''mainMod .. " + SHIFT + L"'' ''hl.dsp.window.move({ direction = "right" })'' null)
 
+        # Scroll and reorder columns
+        (bind ''mainMod .. " + comma"'' ''hl.dsp.layout("move -col")'' null)
+        (bind ''mainMod .. " + period"'' ''hl.dsp.layout("move +col")'' null)
+        (bind ''mainMod .. " + SHIFT + comma"'' ''hl.dsp.layout("swapcol l")'' null)
+        (bind ''mainMod .. " + SHIFT + period"'' ''hl.dsp.layout("swapcol r")'' null)
+        (bind ''mainMod .. " + mouse_up"'' ''hl.dsp.layout("move -col")'' null)
+        (bind ''mainMod .. " + mouse_down"'' ''hl.dsp.layout("move +col")'' null)
+
         # Workspaces
         (bind ''mainMod .. " + 1"'' ''hl.dsp.focus({ workspace = 1 })'' null)
         (bind ''mainMod .. " + 2"'' ''hl.dsp.focus({ workspace = 2 })'' null)
@@ -127,8 +155,8 @@ in
         # Miscellaneous
         (bind ''mainMod .. " + SHIFT + S"'' ''hl.dsp.exec_cmd("hyprcap shot")'' null)
         (bind ''mainMod .. " + SHIFT + M"'' ''hl.dsp.exit()'' null)
-        (bind ''mainMod .. " + mouse_up"'' ''hl.dsp.focus({ workspace = "e-1" })'' null)
-        (bind ''mainMod .. " + mouse_down"'' ''hl.dsp.focus({ workspace = "e+1" })'' null)
+        (bind ''mainMod .. " + CTRL + mouse_up"'' ''hl.dsp.focus({ workspace = "e-1" })'' null)
+        (bind ''mainMod .. " + CTRL + mouse_down"'' ''hl.dsp.focus({ workspace = "e+1" })'' null)
 
         # Volume keys (legacy bindle behavior: repeat while held, including when locked)
         (bind ''"XF86AudioRaiseVolume"'' ''hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+")'' { locked = true; repeating = true; })
