@@ -9,14 +9,27 @@
   imports = [
     ./hardware-configuration.nix
     ../../modules/apps/factorio.nix
+    ../../modules/system/xdg-utils.nix
   ];
 
-  boot.loader.systemd-boot.enable = true;
+  boot.loader.systemd-boot.enable = false;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.grub = {
+    enable = true;
+    efiSupport = true;
+    useOSProber = true;
+    device = "nodev";
+  };
+
+  boot.supportedFilesystems = [ "ntfs-3g" ];
 
   networking.hostName = "desktop";
   networking.networkmanager.enable = true;
 
+  networking.extraHosts = ''
+    127.0.0.1 modules-cdn.eac-prod.on.epicgames.com
+  '';
+  
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"
@@ -68,8 +81,15 @@
   };
 
   programs.steam.enable = true;
+  services.flatpak.enable = true;
 
   nixpkgs.config.allowUnfree = true;
+
+  xdg.portal = {
+    enable = true;
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+    config.common.default = "gtk";
+  };
 
   environment.pathsToLink = [
     "/share/applications"
@@ -83,6 +103,7 @@
     vim
     bitwarden-desktop
     thorium-reader
+    os-prober
     inputs.helium.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 

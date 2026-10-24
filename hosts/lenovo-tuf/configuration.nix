@@ -9,6 +9,7 @@
   imports = [
     ./hardware-configuration.nix
     ../../modules/apps/factorio.nix
+    ../../modules/system/xdg-utils.nix
   ];
 
   boot.loader.systemd-boot.enable = true;

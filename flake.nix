@@ -15,10 +15,6 @@
       url = "github:alonso-herreros/hyprcap";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    niri = {
-      url = "github:sodiboo/niri-flake/main";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs =

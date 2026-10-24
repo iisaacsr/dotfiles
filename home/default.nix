@@ -9,7 +9,6 @@
     ../modules/apps/discord.nix
     ../modules/apps/shell.nix
     ../modules/wms/hyprland/hyprland.nix
-    ../modules/wms/niri/niri.nix
     ../modules/apps/waybar/waybar.nix
     ../modules/apps/obsidian.nix
     ../modules/apps/helix/helix.nix
@@ -35,7 +34,7 @@
 
   xdg.portal = {
     enable = true;
-    config.common.default = "*";
+    config.common.default = "gtk";
 
     extraPortals = with pkgs; [
       xdg-desktop-portal-gtk
@@ -80,5 +79,7 @@
     fastfetch
     nerd-fonts._0xproto
     spotify
+    xwayland-satellite
+    kdePackages.okular
   ];
 }
